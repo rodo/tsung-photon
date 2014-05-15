@@ -1,0 +1,4 @@
+<!-- Server side setup -->
+<servers>
+  <server host="photon.komoot.de" port="80" type="tcp"></server>
+</servers>

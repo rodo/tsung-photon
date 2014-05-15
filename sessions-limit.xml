@@ -1,0 +1,47 @@
+<session name="limitno" probability="100" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+    <var name="address" />
+  </setdynvars>
+
+  <request subst="true"> 
+    <http url="/api?q=%%_address%%" method="GET" version="1.1"></http> 
+  </request>
+
+</session>
+
+<session name="limit01" probability="100" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+    <var name="address" />
+  </setdynvars>
+
+  <request subst="true"> 
+    <http url="/api?q=%%_address%%&amp;limit=1" method="GET" version="1.1"></http> 
+  </request>
+
+</session>
+
+<session name="limit02" probability="100" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+    <var name="address" />
+  </setdynvars>
+
+  <request subst="true"> 
+    <http url="/api?q=%%_address%%&amp;limit=02" method="GET" version="1.1"></http> 
+  </request>
+
+</session>
+
+<session name="limit10" probability="100" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+    <var name="address" />
+  </setdynvars>
+
+  <request subst="true"> 
+    <http url="/api?q=%%_address%%&amp;limit=10" method="GET" version="1.1"></http> 
+  </request>
+
+</session>
