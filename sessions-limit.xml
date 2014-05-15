@@ -4,33 +4,42 @@
     <var name="address" />
   </setdynvars>
 
-  <request subst="true"> 
-    <http url="/api/?q=%%_address%%" method="GET" version="1.1"></http> 
-  </request>
+  <transaction name="limitno">
+
+    <request subst="true"> 
+      <http url="/api/?q=%%_address%%" method="GET" version="1.1"></http> 
+    </request>    
+  </transaction>
 
 </session>
 
-<session name="limit01" probability="25" type="ts_http">
+<session name="limit1" probability="25" type="ts_http">
 
   <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
     <var name="address" />
   </setdynvars>
 
-  <request subst="true"> 
-    <http url="/api/?q=%%_address%%&amp;limit=1" method="GET" version="1.1"></http> 
-  </request>
+  <transaction name="limit01">
+
+    <request subst="true"> 
+      <http url="/api/?q=%%_address%%&amp;limit=1" method="GET" version="1.1"></http> 
+    </request>
+    
+  </transaction>
 
 </session>
 
-<session name="limit02" probability="25" type="ts_http">
+<session name="limit2" probability="25" type="ts_http">
 
   <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
     <var name="address" />
   </setdynvars>
 
-  <request subst="true"> 
-    <http url="/api/?q=%%_address%%&amp;limit=02" method="GET" version="1.1"></http> 
-  </request>
+  <transaction name="limit02">        
+    <request subst="true"> 
+      <http url="/api/?q=%%_address%%&amp;limit=2" method="GET" version="1.1"></http> 
+    </request>    
+  </transaction>
 
 </session>
 
@@ -39,9 +48,11 @@
   <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
     <var name="address" />
   </setdynvars>
-
-  <request subst="true"> 
-    <http url="/api/?q=%%_address%%&amp;limit=10" method="GET" version="1.1"></http> 
-  </request>
-
+  <transaction name="limit10">
+    
+    <request subst="true"> 
+      <http url="/api/?q=%%_address%%&amp;limit=10" method="GET" version="1.1"></http> 
+    </request>
+    
+  </transaction>
 </session>
