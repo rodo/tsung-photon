@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!--
+Author : Rodolphe Quiédeville <rodolphe@quiedeville.org>
+
+Goal : define if using parameter limit does impact performance
+
+-->
+<!DOCTYPE tsung SYSTEM "/usr/share/tsung/tsung-1.0.dtd"
+[
+<!ENTITY clients SYSTEM "client-localhost.xml">
+<!ENTITY servers SYSTEM "servers.xml">
+<!ENTITY load SYSTEM "load-med.xml">
+<!ENTITY useragent SYSTEM "option-useragent.xml">
+<!ENTITY sessions SYSTEM "sessions-limit.xml">
+]
+>
+<tsung loglevel="info" dumptraffic="protocol" backend="fullstats" version="1.0">
+
+  &clients;
+  &servers; 
+  &load;
+
+  <options>
+    &useragent;
+    <option name="file_server" id="address" value="data/addresses.csv" />
+    <option name="file_server" id="via" value="data/via.csv" />
+    <option name="file_server" id="town" value="data/town.csv" />
+    <option name="file_server" id="part" value="data/part.csv" />
+  </options>
+  
+  <sessions>
+    <session name="full" probability="25" type="ts_http">
+      
+      <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+	<var name="address" />
+      </setdynvars>
+      
+      <transaction name="fullno">	
+	<request subst="true"><http url="/api/?q=%%_address%%" method="GET" version="1.1"></http></request>    
+      </transaction>      
+    </session>
+
+    <session name="via" probability="25" type="ts_http">
+      
+      <setdynvars sourcetype="file" fileid="via" delimiter=";" order="random">
+	<var name="address" />
+      </setdynvars>
+      
+      <transaction name="via">	
+	<request subst="true"><http url="/api/?q=%%_address%%" method="GET" version="1.1"></http></request>    
+      </transaction>      
+    </session>
+
+    <session name="town" probability="25" type="ts_http">
+      
+      <setdynvars sourcetype="file" fileid="town" delimiter=";" order="random">
+	<var name="address" />
+      </setdynvars>
+      
+      <transaction name="town">	
+	<request subst="true"><http url="/api/?q=%%_address%%" method="GET" version="1.1"></http></request>    
+      </transaction>      
+    </session>
+
+    <session name="part" probability="25" type="ts_http">
+      
+      <setdynvars sourcetype="file" fileid="part" delimiter=";" order="random">
+	<var name="address" />
+      </setdynvars>
+      
+      <transaction name="part">	
+	<request subst="true"><http url="/api/?q=%%_address%%" method="GET" version="1.1"></http></request>    
+      </transaction>      
+    </session>
+
+  </sessions>
+</tsung>

@@ -12,6 +12,8 @@ Main sceanrio, ie files to use with tsung -f
 
 * run-lang.xml : scenario to measure performace impact of parameter `lang`
 
+* run-parts.xml : compare different queries type
+
 Datas
 =====
 
