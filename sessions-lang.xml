@@ -1,0 +1,86 @@
+<session name="lang" probability="15" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+    <var name="address" />
+  </setdynvars>
+
+  <transaction name="empty">
+
+    <request subst="true">
+      <http url="/api/?q=%%_address%%" method="GET" version="1.1"></http>
+    </request>
+  </transaction>
+
+</session>
+
+<session name="langit" probability="17" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+    <var name="address" />
+  </setdynvars>
+
+  <transaction name="langit">
+
+    <request subst="true">
+      <http url="/api/?q=%%_address%%&amp;lang=it" method="GET" version="1.1"></http>
+    </request>
+
+  </transaction>
+
+</session>
+
+<session name="langde" probability="17" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+    <var name="address" />
+  </setdynvars>
+
+  <transaction name="langde">
+    <request subst="true">
+      <http url="/api/?q=%%_address%%&amp;lang=de" method="GET" version="1.1"></http>
+    </request>
+  </transaction>
+
+</session>
+
+<session name="langfr" probability="17" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+    <var name="address" />
+  </setdynvars>
+  <transaction name="langfr">
+
+    <request subst="true">
+      <http url="/api/?q=%%_address%%&amp;lang=fr" method="GET" version="1.1"></http>
+    </request>
+
+  </transaction>
+</session>
+
+<session name="langes" probability="17" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+    <var name="address" />
+  </setdynvars>
+  <transaction name="langes">
+
+    <request subst="true">
+      <http url="/api/?q=%%_address%%&amp;lang=es" method="GET" version="1.1"></http>
+    </request>
+
+  </transaction>
+</session>
+
+<session name="langen" probability="17" type="ts_http">
+
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
+    <var name="address" />
+  </setdynvars>
+  <transaction name="langen">
+
+    <request subst="true">
+      <http url="/api/?q=%%_address%%&amp;lang=en" method="GET" version="1.1"></http>
+    </request>
+
+  </transaction>
+</session>
