@@ -1,6 +1,6 @@
 <session name="limitno" probability="25" type="ts_http">
 
-  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
     <var name="address" />
   </setdynvars>
 
@@ -15,7 +15,7 @@
 
 <session name="limit1" probability="25" type="ts_http">
 
-  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
     <var name="address" />
   </setdynvars>
 
@@ -31,7 +31,7 @@
 
 <session name="limit2" probability="25" type="ts_http">
 
-  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
     <var name="address" />
   </setdynvars>
 
@@ -45,7 +45,7 @@
 
 <session name="limit10" probability="25" type="ts_http">
 
-  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="iter">
+  <setdynvars sourcetype="file" fileid="address" delimiter=";" order="random">
     <var name="address" />
   </setdynvars>
   <transaction name="limit10">
