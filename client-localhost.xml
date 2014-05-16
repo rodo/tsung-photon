@@ -1,0 +1,3 @@
+  <clients>
+    <client host="localhost" use_controller_vm="true"/>
+  </clients>
